@@ -42,7 +42,7 @@ class _SignUpFormState extends State<SignUpForm> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {ScreenUtil.init(context, width: 375, height: 812);
 return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () {
@@ -55,30 +55,39 @@ return GestureDetector(
         child: Scaffold(
          appBar: _buildAppBar(),
           backgroundColor: backgroundSignUpPage,
-          body: LayoutBuilder(builder:
-              (BuildContext context, BoxConstraints viewportConstraints) {
-            return Container(
-              child: SingleChildScrollView(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minHeight: viewportConstraints.maxHeight,
+          body:  SingleChildScrollView(
+                          child: Container(
+                child: Column(
+                 children: [
+                   SizedBox(
+                 height: ScreenUtil().setHeight(254.08),
                   ),
-                  child: Column(
-                   children: [
-                     SizedBox(
-                   height: ScreenUtil().setHeight(254.08),
-                    ),
-                    _buildLabelTextEmail(),
+                  _buildLabelTextEmail(),
         SizedBox(
           height: ScreenUtil().setHeight(7), 
         ),
     _buildEmail(),
-                   ],
-                  ),
+     SizedBox(
+          height: ScreenUtil().setHeight(19.92), 
+        ),
+    _buildLabelTextPassword(),
+      SizedBox(
+          height: ScreenUtil().setHeight(7), 
+        ),
+    _buildPassword(),
+    SizedBox(
+          height: ScreenUtil().setHeight(106), 
+        ),
+    _signUpButtonBuild(),
+    SizedBox(
+          height: ScreenUtil().setHeight(35.47), 
+        ),
+_builtForgetDetails()
+                 ],
                 ),
               ),
-            );
-          }),
+            
+          ),
         ),
       ),
     );
@@ -125,31 +134,86 @@ Widget _buildEmail() {
             _fieldFocusChange(context, _emailAdresFocus, _passwordInpuFocus);
           },
           decoration: InputDecoration(
-            
-            errorStyle: TextStyle(fontSize: ScreenUtil().setSp(13), height: -0.01),
-            
-            // hintText: "E-mail",
-            // hintStyle: TextStyle(
-            //   fontWeight: FontWeight.w600,
-            //   color: Color(0xff4d606f),
-            //   fontSize: ScreenUtil().setSp(16),
-            // ),
+           // border: UnderlineInputBorder(),
+            errorStyle: TextStyle(fontSize: ScreenUtil().setSp(13), height: 0.1),
           ),
-          validator: (value) {
-            if (value != "jhacker@example.org") {
-              return "False Email";
-            } else {
-              return null;
-            }
-          }),
+          // validator: (value) {
+          //   if (value != "jhacker@example.org") {
+          //     return "False Email";
+          //   } else {
+          //     return null;
+          //   }
+          // }
+          ),
+    );
+  }
+Widget _buildLabelTextPassword(){
+  return Padding(
+  padding: const EdgeInsets.only(left:32, right: 31 ),
+  child: Container(
+  width: ScreenUtil().setWidth(312),
+  height: ScreenUtil().setHeight(15),
+  child:Text("Password", style: TextStyle( fontSize:ScreenUtil().setSp(13),height: ScreenUtil().setHeight(1.17), color: Color(0xFFB6B5B5), fontWeight: FontWeight.w400),) ,
+  ),);
+} 
+
+
+Widget _buildPassword() {
+    return Container(
+      height: ScreenUtil().setHeight(48),
+      width: ScreenUtil().setWidth(312),
+      decoration: BoxDecoration(
+        color: Color(0xFF4B4646),
+        borderRadius: BorderRadius.all(
+          Radius.circular(3),
+        ),
+      ),
+      child: TextFormField(
+        controller: _passwordController,
+        // obscureText: _obscureText,
+        keyboardType: TextInputType.text,
+        textInputAction: TextInputAction.done,
+        focusNode: _passwordInpuFocus,
+        onFieldSubmitted: (value) {
+          _passwordInpuFocus.unfocus();
+        },
+        decoration: InputDecoration(
+        errorStyle: TextStyle(fontSize: ScreenUtil().setSp(13), height: 0.1),
+         
+        ),
+        //validator: validatepassword,
+      ),
+    );
+  }
+  Widget _signUpButtonBuild(){
+    return Padding(
+          padding: const EdgeInsets.only(left:32, right: 32 ),
+          child: Container(
+          width: ScreenUtil().setWidth(311),
+          height: ScreenUtil().setHeight(48),
+          child: RaisedButton(onPressed: (){
+            Navigator.of(context).pushNamed("/signUp");
+          },color: signUpRoutesPageColor,child:signUpRoutesPageText,shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)) ,)
+          ),
+          );
+  }
+ Widget _builtForgetDetails() {
+    return Padding(
+      padding: const EdgeInsets.only(left:48.23, right: 53.63 ),
+      child: Container(
+         width: ScreenUtil().setWidth(273.14),
+          height: ScreenUtil().setHeight(31.21),
+        child: FlatButton(
+          onPressed: () {},
+          child: Text(
+            "FORFOT YOUR PASSWORD?",
+             style: TextStyle( fontSize:ScreenUtil().setSp(14),height: ScreenUtil().setHeight(1.17), color: Color(0xFFFFFFFF), fontWeight: FontWeight.w500),) ,
+          ),
+        ),
+      
     );
   }
 
-  // Widget
-  // Widget
-  // Widget
-  // Widget
- 
 _fieldFocusChange(
     BuildContext context, FocusNode currentFocus, FocusNode nextFocus) {
   currentFocus.unfocus();
