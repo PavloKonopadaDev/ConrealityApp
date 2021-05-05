@@ -22,3 +22,11 @@ Widget labeltextofPasswordSignUpPage=Text("Password", style: TextStyle( fontSize
 const signUpSignUpPageColor=Color(0xFF989898);
 Widget signUpSignUpPageText=Text("SIGN UP", style: TextStyle(fontWeight: FontWeight.w500,fontSize:ScreenUtil().setSp(14), color: Color(0xFFFFFFFF),height: ScreenUtil().setHeight(1.17)),textAlign: TextAlign.center,);
 Widget forgotPasswordSignUpPageText=Text("FORFOT YOUR PASSWORD?",style: TextStyle( fontSize:ScreenUtil().setSp(14),height: ScreenUtil().setHeight(1.17), color: Color(0xFFFFFFFF), fontWeight: FontWeight.w500),);
+
+
+
+Widget titleOfAppBarQrCodeForm=Text('Join to game', style: TextStyle(fontWeight: FontWeight.w400, fontSize:ScreenUtil().setSp(20),height: ScreenUtil().setHeight(1.17),),textAlign: TextAlign.center,);
+const appBarQrCodeFormColor=Color(0xFF8E8D8D);
+const backgroundQrCodeForm=Color(0xFFFFFFFF);
+const scanColorButtonQrCodeForm=Color(0xFF989898);
+Widget scanTextButtonQrCodeForm=Text("SCAN QR-CODE", style: TextStyle(fontWeight: FontWeight.w500,fontSize:ScreenUtil().setSp(14), color: Color(0xFFFFFFFF), height: ScreenUtil().setHeight(1.17)),textAlign: TextAlign.center,);

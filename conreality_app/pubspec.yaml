@@ -30,6 +30,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_screenutil: ^1.1.0
   form_field_validator: ^1.0.1
+  path_provider: 0.4.1
+  barcode_scan: 1.0.0
+  qr_flutter: ^1.1.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -49,7 +53,11 @@ flutter:
   assets:
     - assets/images/routesPagelogo.png
     - assets/images/routesPageword.png
-
+    - assets/images/qrCode.png
+    - assets/images/topLeftCorner.png
+    - assets/images/bottomLeftCorner.png
+    - assets/images/topRightCorner.png
+    - assets/images/bottomRightCorner.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
