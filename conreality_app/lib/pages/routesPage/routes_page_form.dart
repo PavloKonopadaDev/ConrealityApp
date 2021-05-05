@@ -76,7 +76,8 @@ class _RoutesPageFormState extends State<RoutesPageForm> {
           height: ScreenUtil().setHeight(48),
           child: RaisedButton(onPressed: (){
             Navigator.of(context).pushNamed("/signUp");
-          },color: signUpRoutesPageColor,child:signUpRoutesPageText,shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)) ,)
+          },color: signUpRoutesPageColor,child:signUpRoutesPageText,shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)),
+          )
           ),
           );
   }
@@ -89,7 +90,8 @@ class _RoutesPageFormState extends State<RoutesPageForm> {
           ),
           width: ScreenUtil().setWidth(311),
           height: ScreenUtil().setHeight(48),
-          child: RaisedButton(onPressed: (){},color: logInRoutesPageColor,child:logInRoutesPageText,shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)) ,)
+          child: RaisedButton(onPressed: (){},color: logInRoutesPageColor,child:logInRoutesPageText,shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)),
+          )
           ),
           );
   }
@@ -116,7 +118,10 @@ class _RoutesPageFormState extends State<RoutesPageForm> {
           ),
           width: ScreenUtil().setWidth(311),
           height: ScreenUtil().setHeight(48),
-          child: RaisedButton(onPressed: (){},
+          child: RaisedButton(onPressed: (){
+          Navigator.of(context).pushNamed("/qrCodeScan");
+          },
+          
           color: joinToGameRoutesPageColor,child:joinToGameRoutesPageText,shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)) ,)
           ),
           );
