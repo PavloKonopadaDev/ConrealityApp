@@ -14,15 +14,15 @@ class _RoutesPageFormState extends State<RoutesPageForm> {
     ScreenUtil.init(context, width: 375, height: 812);
     return Scaffold(
       backgroundColor:backgroundRoutesPage ,
-      body: Center(
-        child: Column(
+      body: SingleChildScrollView(
+              child: Column(
           children: [
           SizedBox( height: ScreenUtil().setHeight(149.89),),
           _logoImageBuild(),
 
           SizedBox( height: ScreenUtil().setHeight(11.46),),
           _wordUnderLogoBuild(),
-      
+        
           SizedBox( height: ScreenUtil().setHeight(93.65),),  
          _bigTextBuild(),
 
