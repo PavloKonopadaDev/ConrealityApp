@@ -25,26 +25,23 @@ class _QrCodePageFormState extends State<QrCodePageForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundQrCodeForm,
-        appBar: _buildAppbar(),
-        body: Center(
-          child: Column(
-            
-            children: [
-               SizedBox( height: ScreenUtil().setHeight(192),),
-              _buildQrCodeResults(),
-               SizedBox( height: ScreenUtil().setHeight(158),),
 
-            _buildScanButton(),
-              // Padding(
-              //   padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              //   child: Text(
-              //     barcode,
-              //     textAlign: TextAlign.center,
-              //   ),
-              // ),
-            ],
+        appBar: _buildAppbar(),
+
+        body: Center(
+
+          child: Column(children: [
+
+            SizedBox(height: ScreenUtil().setHeight(168),),
+            _buildResult(),
+
+             SizedBox(height: ScreenUtil().setHeight(133.13),),
+            _buildScanButton()
+
+          ],
           ),
-        ));
+        )
+        );
 }
 Future scan() async {
     try {
@@ -65,6 +62,7 @@ Future scan() async {
       setState(() => this.barcode = 'Unknown error: $e');
     }
   }
+
   Widget _buildAppbar(){
     return AppBar(
       
@@ -75,11 +73,59 @@ Future scan() async {
 
     );
   }
-  Widget _buildQrCodeResults(){
+  Widget _buildResult(){
     return Container(
+    width: ScreenUtil().setWidth(276),
+    height: ScreenUtil().setHeight(308.87),
+    color: Colors.white,
+    child: Stack(children: [
+      Center(child:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
       width: ScreenUtil().setWidth(260),
-      height: ScreenUtil().setHeight(260),
-      child: Image.asset("assets/images/qrCode.png"),
+    height: ScreenUtil().setHeight(260),
+    child: Image.asset("assets/images/qrCode.png"),
+          )
+        ],
+      ),),
+      Positioned(
+              top: 0,
+              left: 0,
+            child: Container(
+    width: ScreenUtil().setWidth(41.74),
+    height: ScreenUtil().setHeight(41.74),
+              child: Image.asset("assets/images/topLeftCorner.png"),
+              ),
+            ),
+             Positioned(
+              top: 0,
+              right: 0,
+            child: Container(
+           width: ScreenUtil().setWidth(41.74),
+    height: ScreenUtil().setHeight(41.74),
+                child: Image.asset("assets/images/topRightCorner.png"),
+              ),
+            ),
+             Positioned(
+              bottom: 0,
+              left: 0,
+            child: Container(
+          width: ScreenUtil().setWidth(41.74),
+    height: ScreenUtil().setHeight(41.74),
+         child: Image.asset("assets/images/bottomLeftCorner.png"),
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              right: 0,
+            child: Container(
+            width: ScreenUtil().setWidth(41.74),
+    height: ScreenUtil().setHeight(41.74),
+         child: Image.asset("assets/images/bottomRightCorner.png"),
+              ),
+            )
+    ],),
     );
   }
   Widget _buildScanButton(){
@@ -89,7 +135,7 @@ Future scan() async {
           
           width: ScreenUtil().setWidth(311),
           height: ScreenUtil().setHeight(48),
-          child: RaisedButton( 
+      child: RaisedButton( 
             onPressed: scan,
           
           color: scanColorButtonQrCodeForm,child:scanTextButtonQrCodeForm,shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)) ,)
