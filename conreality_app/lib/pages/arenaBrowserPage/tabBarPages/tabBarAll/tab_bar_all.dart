@@ -6,31 +6,29 @@ class TabBarAll extends StatelessWidget {
   Widget build(BuildContext context) {
    return SingleChildScrollView(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
+       
         children: [
-          _buildCard(),
-          SizedBox(
-            height: ScreenUtil().setHeight(5),
-          ),
-          _buildCard(),
-          SizedBox(
-            height: ScreenUtil().setHeight(5),
-          ),
-          _buildCard(),
-          SizedBox(
-            height: ScreenUtil().setHeight(5),
-          ),
-          _buildCard(),
+
+
+      SizedBox(height: ScreenUtil().setHeight(24),),
+          Row(children: [
+            SizedBox( width: ScreenUtil().setWidth(16),),
+              _buildSortBttn(),
+               SizedBox(width: ScreenUtil().setWidth(15), ),
+              _buildFilterBttn(),
         ],
       ),
-    );
+
+
+
+
+      ]
+    ));
   }
 
   Widget _buildCard() {
     return Card(
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(height: ScreenUtil().setWidth(10)),
           Row(
@@ -129,5 +127,117 @@ class TabBarAll extends StatelessWidget {
       ),
     );
   }
+  Widget _buildSortBttn(){
+    return InkWell(
+      onTap: (){},
+          child: Container(
+
+                  height: ScreenUtil().setHeight(36),
+                  width: ScreenUtil().setWidth(82),
+                  decoration:BoxDecoration(
+                  border: Border.all(
+                  color: Color(0xFF989898), 
+                  width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.all(
+                  Radius.circular(3.0) 
+                  ),),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5, top:4 , bottom:4, right: 10 ),
+                    child: Container(
+                       height: ScreenUtil().setHeight(24),
+                  width: ScreenUtil().setWidth(63),
+                      color: Colors.black,
+                      child:Row(children: [
+                        Container(
+                          
+                  height: ScreenUtil().setHeight(24),
+                  width: ScreenUtil().setWidth(24),
+                  child: Row(children: [
+                  Container( 
+                    alignment: Alignment.center,    
+                  height: ScreenUtil().setHeight(20.7),
+                  width: ScreenUtil().setWidth(7.71),
+                  child: Icon(
+                   
+          
+                    Icons.south, color: Colors.white,
+                    size: 17,),
+                  ),
+                   SizedBox(width: ScreenUtil().setWidth(3), ),
+                   Padding(
+                     padding: const EdgeInsets.only(bottom: 6),
+                     child: Container(     
+                  height: ScreenUtil().setHeight(14.7),
+                  width: ScreenUtil().setWidth(7.71),
+                     child: Icon(
+                     
+          
+                      Icons.north, color: Colors.white,
+                      size: 17,),
+                  
+                  ),
+                   ),
+                  ],),
+                        ),
+                        SizedBox(width: ScreenUtil().setWidth(5),),
+                        Container(
+                         child: Text("SORT",style: TextStyle(color:Color(0xFFFFFFFF),fontSize:ScreenUtil().setSp(12),fontWeight: FontWeight.w500,height: ScreenUtil().setHeight(1.16),),textAlign: TextAlign.center,),
+                  height: ScreenUtil().setHeight(14),
+                  width: ScreenUtil().setWidth(34),
+                        ),
+                      ],) ,
+                    ),
+                  ),
+
+
+                 ),
+    );
+  }
+
+Widget _buildFilterBttn(){
+  return InkWell(
+      onTap: (){},
+          child: Container(
+
+                  height: ScreenUtil().setHeight(36),
+                  width: ScreenUtil().setWidth(90),
+                  decoration:BoxDecoration(
+                  border: Border.all(
+                  color: Color(0xFF989898), 
+                  width: 2.0,
+                  ),
+                  borderRadius: BorderRadius.all(
+                  Radius.circular(3.0) 
+                  ),),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5, top:4 , bottom:4, right: 10 ),
+                    child: Container(
+                       height: ScreenUtil().setHeight(24),
+                  width: ScreenUtil().setWidth(71),
+                      color: Colors.black,
+                      child:Row(children: [
+                        Container(
+                          
+                  height: ScreenUtil().setHeight(24),
+                  width: ScreenUtil().setWidth(24),
+                  child: Icon(Icons.filter_alt, color:Colors.white,size: 17,),
+                        ),
+                        SizedBox(width: ScreenUtil().setWidth(5),),
+                        Container(
+
+                         child: Text("FILTER",style: TextStyle(color:Color(0xFFFFFFFF),fontSize:ScreenUtil().setSp(12),fontWeight: FontWeight.w500,height: ScreenUtil().setHeight(1.16),),textAlign: TextAlign.center,),
+                  height: ScreenUtil().setHeight(14),
+                  width: ScreenUtil().setWidth(42),
+                        ),
+                      ],) ,
+                    ),
+                  ),
+
+
+                 ),
+    );
+}
+
 }
 

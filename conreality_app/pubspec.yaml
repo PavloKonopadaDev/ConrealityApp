@@ -58,6 +58,8 @@ flutter:
     - assets/images/bottomLeftCorner.png
     - assets/images/topRightCorner.png
     - assets/images/bottomRightCorner.png
+    - assets/images/arrowDown.png
+    - assets/images/stickForArrowDown.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
