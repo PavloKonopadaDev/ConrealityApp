@@ -35,3 +35,15 @@ Widget scanTextButtonQrCodeForm=Text("SCAN QR-CODE", style: TextStyle(fontWeight
 Widget titleOfAppBarArenaBrowserPage=Text('Arena browser', style: TextStyle(fontWeight: FontWeight.w400, fontSize:ScreenUtil().setSp(20),height: ScreenUtil().setHeight(1.17),),textAlign: TextAlign.center,);
 const backgroundArenaBrowserPage=Color(0xFF000000);
 const appBarArenaBrowserPageColor=Color(0xFF8E8D8D);
+
+const backgroundArenaBrowserPageBottomAppBar=Color(0xFF000000);
+const colorForBottomIcons=Color(0xFF989898);
+Widget bottomAppBarTextForProfileButton=Text("Profile",style: TextStyle(color:Color(0xFF989898),fontSize:ScreenUtil().setSp(12),fontWeight: FontWeight.w500,height: ScreenUtil().setHeight(1.17),),textAlign: TextAlign.center,);
+Widget bottomAppBarTextForArenaButton=Text("Arena",style: TextStyle(color:Color(0xFF989898),fontSize:ScreenUtil().setSp(12), fontWeight: FontWeight.w500,height: ScreenUtil().setHeight(1.17),),textAlign: TextAlign.center,);
+Widget bottomAppBarTextForTeamsButton=Text("Teams",style: TextStyle(color:Color(0xFF989898),fontSize:ScreenUtil().setSp(12),fontWeight: FontWeight.w500,height: ScreenUtil().setHeight(1.17),),textAlign: TextAlign.center,);
+Widget bottomAppBarTextForChatsButton=Text("Chats",style: TextStyle(color:Color(0xFF989898), fontSize:ScreenUtil().setSp(12),fontWeight: FontWeight.w500,height: ScreenUtil().setHeight(1.17),),textAlign: TextAlign.center,);
+
+
+Widget textForTabBarAll= Text('All',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: ScreenUtil().setSp(14),),);
+Widget textForTabBarFavourites=Text('Favorite',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: ScreenUtil().setSp(14),),);
+Widget textForTabBarMyArena=Text('My Arena',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: ScreenUtil().setSp(14),),);
