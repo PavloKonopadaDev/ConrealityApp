@@ -47,3 +47,5 @@ Widget bottomAppBarTextForChatsButton=Text("Chats",style: TextStyle(color:Color(
 Widget textForTabBarAll= Text('All',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: ScreenUtil().setSp(14),),);
 Widget textForTabBarFavourites=Text('Favorite',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: ScreenUtil().setSp(14),),);
 Widget textForTabBarMyArena=Text('My Arena',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: ScreenUtil().setSp(14),),);
+
+const backgroundCreateArenaColor = Color(0xFF2B2B2B);

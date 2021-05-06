@@ -48,7 +48,9 @@ title: titleOfAppBarArenaBrowserPage,
 centerTitle: true,
 backgroundColor: appBarArenaBrowserPageColor ,
 
-leading: GestureDetector(onTap: (){},
+leading: GestureDetector(onTap: (){
+  Navigator.pushNamed(context, "/createArenaContainer");
+},
 
 child:Container(
 width: ScreenUtil().setWidth(0),
