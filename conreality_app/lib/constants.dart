@@ -30,3 +30,8 @@ const appBarQrCodeFormColor=Color(0xFF8E8D8D);
 const backgroundQrCodeForm=Color(0xFFFFFFFF);
 const scanColorButtonQrCodeForm=Color(0xFF989898);
 Widget scanTextButtonQrCodeForm=Text("SCAN QR-CODE", style: TextStyle(fontWeight: FontWeight.w500,fontSize:ScreenUtil().setSp(14), color: Color(0xFFFFFFFF), height: ScreenUtil().setHeight(1.17)),textAlign: TextAlign.center,);
+
+
+Widget titleOfAppBarArenaBrowserPage=Text('Arena browser', style: TextStyle(fontWeight: FontWeight.w400, fontSize:ScreenUtil().setSp(20),height: ScreenUtil().setHeight(1.17),),textAlign: TextAlign.center,);
+const backgroundArenaBrowserPage=Color(0xFF000000);
+const appBarArenaBrowserPageColor=Color(0xFF8E8D8D);

@@ -213,7 +213,7 @@ return Padding(
           width: ScreenUtil().setWidth(311),
           height: ScreenUtil().setHeight(48),
           child: RaisedButton(onPressed: (){
-          Navigator.of(context).pushNamed("/signUp");
+          Navigator.of(context).pushNamed( "/arenaBrowser");
 
  },
 color: signUpSignUpPageColor,child:signUpSignUpPageText,shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)) ,
