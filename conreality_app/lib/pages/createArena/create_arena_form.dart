@@ -13,82 +13,244 @@ class CreateArenaForm extends StatefulWidget {
 }
 
 class _CreateArenaFormState extends State<CreateArenaForm> {
+  final FocusNode _emailAdresFocus = FocusNode();
+  final FocusNode _passwordInpuFocus = FocusNode();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF2B2B2B),
-      
-      body: Column(
-        children: [
-          Container(
-            width: ScreenUtil().setWidth(375),
-            height: ScreenUtil().setHeight(32),
-            color: Colors.grey,
-          ),
-          Container(
-            width: ScreenUtil().setWidth(375),
-            height: ScreenUtil().setHeight(55.15),
-            color: Color(0xFF2B2B2B),
-            child: Row(
-              children: [
-                SizedBox(
-                  width: ScreenUtil().setWidth(21),
-                ),
-                Container(
-                    width: ScreenUtil().setWidth(14),
-                    height: ScreenUtil().setHeight(14),
-                    child: Icon(
-                      Icons.close,
-                      color: Colors.white,
-                    )),
-                SizedBox(
-                  width: ScreenUtil().setWidth(225.2),
-                ),
-                InkWell(
-                  onTap: (){},
-                  child: Container(
-                    width: ScreenUtil().setWidth(97),
-                    height: ScreenUtil().setHeight(36),
-                    decoration:BoxDecoration(
-                                         color: Color(0xFF989898), 
-
-                  
-                  borderRadius: BorderRadius.all(
-                  Radius.circular(3.0) 
-                  ),),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 7, top: 6, bottom: 6, right: 12),
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () {
+        FocusScope.of(context).requestFocus(
+          FocusNode(),
+        );
+      },
+      child: Scaffold(
+        backgroundColor: Color(0xFF2B2B2B),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                width: ScreenUtil().setWidth(375),
+                height: ScreenUtil().setHeight(32),
+                color: Colors.grey,
+              ),
+              Container(
+                width: ScreenUtil().setWidth(375),
+                height: ScreenUtil().setHeight(55.15),
+                color: Color(0xFF2B2B2B),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: ScreenUtil().setWidth(21),
+                    ),
+                    Container(
+                        width: ScreenUtil().setWidth(14),
+                        height: ScreenUtil().setHeight(14),
+                        child: Icon(
+                          Icons.close,
+                          color: Colors.white,
+                        )),
+                    SizedBox(
+                      width: ScreenUtil().setWidth(225.2),
+                    ),
+                    InkWell(
+                      onTap: () {},
                       child: Container(
-                        width: ScreenUtil().setWidth(78),
-                        height: ScreenUtil().setHeight(24),
-                        child: Row(children: [
-                          Container(
-                              width: ScreenUtil().setWidth(24),
-                              height: ScreenUtil().setHeight(24),
-                              child: Icon(Icons.add, color: Colors.white,),
+                        width: ScreenUtil().setWidth(97),
+                        height: ScreenUtil().setHeight(36),
+                        decoration: BoxDecoration(
+                          color: Color(0xFF989898),
+                          borderRadius: BorderRadius.all(Radius.circular(3.0)),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 7, top: 6, bottom: 6, right: 12),
+                          child: Container(
+                            width: ScreenUtil().setWidth(78),
+                            height: ScreenUtil().setHeight(24),
+                            child: Row(children: [
+                              Container(
+                                width: ScreenUtil().setWidth(24),
+                                height: ScreenUtil().setHeight(24),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                ),
                               ),
-                          SizedBox(
-                            width: ScreenUtil().setWidth(5),
+                              SizedBox(
+                                width: ScreenUtil().setWidth(5),
+                              ),
+                              Container(
+                                width: ScreenUtil().setWidth(49),
+                                height: ScreenUtil().setHeight(14),
+                                child: Text(
+                                  "CREATE",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ]),
                           ),
-                          Container(
-                            width: ScreenUtil().setWidth(49),
-                            height: ScreenUtil().setHeight(14),
-                            child: Text(
-                              "CREATE",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ]),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: ScreenUtil().setWidth(61),
+                  ),
+                  Container(
+                    width: ScreenUtil().setWidth(96),
+                    height: ScreenUtil().setHeight(20),
+                    child: Text(
+                      '*required to fill',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  left: ScreenUtil().setWidth(16.03),
+                  right: ScreenUtil().setWidth(14.97),
+                ),
+                child: Container(
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: UnderlineInputBorder(),
+                      hintText: '*Add arena name',
+                      contentPadding: EdgeInsets.only(
+                        left: ScreenUtil().setWidth(46.03),
+                      ),
+                      hintStyle: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        fontSize: ScreenUtil().setSp(22),
+                        color: Colors.white,
+                        height: ScreenUtil().setHeight(1.3),
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+              _buildAddLocation(),
+              _buildDivider(),
+               _buildAddLocation(),
+              _buildDivider(),
+               _buildAddLocation(),
+              _buildDivider(),
+
+               _buildAddLocation(),
+              _buildDivider(),
+               _buildAddLocation(),
+              _buildDivider(),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
+// adding time
+  // DateTime _date = new DateTime.now();
+  // TimeOfDay _time = new TimeOfDay.now();
+
+  // Future<Null> _selectDate(BuildContext context) async {
+  //   final DateTime picked = await showDatePicker(
+  //     context: context,
+  //     initialDate: _date,
+  //     firstDate: new DateTime(2019),
+  //     lastDate: new DateTime(2021),
+  //   );
+
+  //   if (picked != null && picked != _date) {
+  //     print('Date selected: ${_date.toString()}');
+  //     setState(() {
+  //       _date = picked;
+  //     });
+  //   }
+  // }
+
+  // Future<Null> _selectTime(BuildContext context) async {
+  //   final TimeOfDay picked = await showTimePicker(
+  //     context: context,
+  //     initialTime: _time,
+  //   );
+
+  //   if (picked != null && picked != _time) {
+  //     print('Time selected: ${_time.toString()}');
+  //     setState(() {
+  //       _time = picked;
+  //     });
+  //   }
+  // }
+
+
+
+
+Widget _buildDivider(){
+  return Divider(
+             indent: ScreenUtil().setWidth(14.97),
+             endIndent:ScreenUtil().setWidth(16.03) ,
+             thickness: 1,
+            //  height: ScreenUtil().setHeight(1),
+             color: Color(0xFF361B1B),
+             
+           );
+}
+
+Widget _buildAddLocation(){
+  return Container(
+                height: ScreenUtil().setHeight(70),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    left: ScreenUtil().setWidth(16.03),
+                    right: ScreenUtil().setWidth(14.97),
+                  ),
+                  child: Container(
+                    child: Row(
+                      children: [
+                        Container(
+                          height: ScreenUtil().setHeight(38),
+                          width: ScreenUtil().setWidth(36),
+                          child: Icon(
+                            Icons.location_on_outlined,
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(
+                          width: ScreenUtil().setWidth(7.72),
+                        ),
+                        Container(
+                          height: ScreenUtil().setHeight(21),
+                          width: ScreenUtil().setWidth(169),
+                          child: Text(
+                            "*Add meeting location",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: ScreenUtil().setSp(16),
+                              color: Colors.white,
+                              height: ScreenUtil().setHeight(1.3),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+  ); 
+          
+}
+
+
+
+
+
+
+
+
+
+
+
+
 }

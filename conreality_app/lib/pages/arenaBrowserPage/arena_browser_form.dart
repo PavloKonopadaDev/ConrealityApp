@@ -151,6 +151,7 @@ title: bottomAppBarTextForChatsButton
 ),
 ],
 onTap: (index){
+  // print("1");
   setState(() {
     selectedIndex=index;
   });
