@@ -136,14 +136,13 @@ class _CreateArenaFormState extends State<CreateArenaForm> {
               ),
               _buildAddLocation(),
               _buildDivider(),
-               _buildAddLocation(),
+              _buildGameTime(),
               _buildDivider(),
-               _buildAddLocation(),
+              _buildAddAPhotoCover(),
               _buildDivider(),
-
-               _buildAddLocation(),
+              _buildInvitePeople(),
               _buildDivider(),
-               _buildAddLocation(),
+              _buildAddLocation(),
               _buildDivider(),
             ],
           ),
@@ -185,72 +184,222 @@ class _CreateArenaFormState extends State<CreateArenaForm> {
   //   }
   // }
 
+  Widget _buildDivider() {
+    return Divider(
+      indent: ScreenUtil().setWidth(14.97),
+      endIndent: ScreenUtil().setWidth(16.03),
+      thickness: 1,
+      //  height: ScreenUtil().setHeight(1),
+      color: Color(0xFF361B1B),
+    );
+  }
 
-
-
-Widget _buildDivider(){
-  return Divider(
-             indent: ScreenUtil().setWidth(14.97),
-             endIndent:ScreenUtil().setWidth(16.03) ,
-             thickness: 1,
-            //  height: ScreenUtil().setHeight(1),
-             color: Color(0xFF361B1B),
-             
-           );
-}
-
-Widget _buildAddLocation(){
-  return Container(
-                height: ScreenUtil().setHeight(70),
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    left: ScreenUtil().setWidth(16.03),
-                    right: ScreenUtil().setWidth(14.97),
-                  ),
-                  child: Container(
-                    child: Row(
-                      children: [
-                        Container(
-                          height: ScreenUtil().setHeight(38),
-                          width: ScreenUtil().setWidth(36),
-                          child: Icon(
-                            Icons.location_on_outlined,
-                            color: Colors.white,
-                          ),
-                        ),
-                        SizedBox(
-                          width: ScreenUtil().setWidth(7.72),
-                        ),
-                        Container(
-                          height: ScreenUtil().setHeight(21),
-                          width: ScreenUtil().setWidth(169),
-                          child: Text(
-                            "*Add meeting location",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: ScreenUtil().setSp(16),
-                              color: Colors.white,
-                              height: ScreenUtil().setHeight(1.3),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+  Widget _buildAddLocation() {
+    return Container(
+      height: ScreenUtil().setHeight(70),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: ScreenUtil().setWidth(16.03),
+          right: ScreenUtil().setWidth(14.97),
+        ),
+        child: Container(
+          child: Row(
+            children: [
+              Container(
+                height: ScreenUtil().setHeight(38),
+                width: ScreenUtil().setWidth(36),
+                child: Icon(
+                  Icons.location_on_outlined,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                width: ScreenUtil().setWidth(7.72),
+              ),
+              Container(
+                height: ScreenUtil().setHeight(21),
+                width: ScreenUtil().setWidth(169),
+                child: Text(
+                  "*Add meeting location",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: ScreenUtil().setSp(16),
+                    color: Colors.white,
+                    height: ScreenUtil().setHeight(1.3),
                   ),
                 ),
-  ); 
-          
-}
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
+  Widget _buildGameTime() {
+    return Container(
+      height: ScreenUtil().setHeight(70),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: ScreenUtil().setWidth(16.03),
+          right: ScreenUtil().setWidth(14.97),
+        ),
+        child: Container(
+          child: Row(
+            children: [
+              Container(
+                height: ScreenUtil().setHeight(38),
+                width: ScreenUtil().setWidth(36),
+                child: Icon(
+                  Icons.access_time,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                width: ScreenUtil().setWidth(7.72),
+              ),
+              Container(
+                height: ScreenUtil().setHeight(21),
+                width: ScreenUtil().setWidth(169),
+                child: Text(
+                  "*Add game time",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: ScreenUtil().setSp(16),
+                    color: Colors.white,
+                    height: ScreenUtil().setHeight(1.3),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
+  Widget _buildAddAPhotoCover() {
+    return Container(
+      height: ScreenUtil().setHeight(70),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: ScreenUtil().setWidth(16.03),
+          right: ScreenUtil().setWidth(14.97),
+        ),
+        child: Container(
+          child: Row(
+            children: [
+              Container(
+                height: ScreenUtil().setHeight(38),
+                width: ScreenUtil().setWidth(36),
+                child: Icon(
+                  Icons.photo_camera,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                width: ScreenUtil().setWidth(7.72),
+              ),
+              Container(
+                height: ScreenUtil().setHeight(21),
+                width: ScreenUtil().setWidth(169),
+                child: Text(
+                  "*Add a photo cover",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: ScreenUtil().setSp(16),
+                    color: Colors.white,
+                    height: ScreenUtil().setHeight(1.3),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-
-
-
-
-
-
-
-
-
+  Widget _buildInvitePeople() {
+    return Container(
+      height: ScreenUtil().setHeight(70),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: ScreenUtil().setWidth(16.03),
+          right: ScreenUtil().setWidth(14.97),
+        ),
+        child: Container(
+          child: Row(
+            children: [
+              Container(
+                height: ScreenUtil().setHeight(38),
+                width: ScreenUtil().setWidth(36),
+                child: Icon(
+                  Icons.person_add_alt_1_outlined,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                width: ScreenUtil().setWidth(7.72),
+              ),
+              Container(
+                height: ScreenUtil().setHeight(21),
+                width: ScreenUtil().setWidth(169),
+                child: Text(
+                  "*Invite people",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: ScreenUtil().setSp(16),
+                    color: Colors.white,
+                    height: ScreenUtil().setHeight(1.3),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  Widget _buildAirSoftLviv() {
+    return Container(
+      height: ScreenUtil().setHeight(70),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: ScreenUtil().setWidth(16.03),
+          right: ScreenUtil().setWidth(14.97),
+        ),
+        child: Container(
+          child: Row(
+            children: [
+              Container(
+                height: ScreenUtil().setHeight(38),
+                width: ScreenUtil().setWidth(36),
+                child: Icon(
+                  Icons.person_add,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                width: ScreenUtil().setWidth(7.72),
+              ),
+              Container(
+                height: ScreenUtil().setHeight(21),
+                width: ScreenUtil().setWidth(169),
+                child: Text(
+                  "*Ait Soft Lviv (@airsoft_lviv)",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: ScreenUtil().setSp(16),
+                    color: Colors.white,
+                    height: ScreenUtil().setHeight(1.3),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
