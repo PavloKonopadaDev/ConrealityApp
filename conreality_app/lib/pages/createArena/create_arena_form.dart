@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 
 import '../../constants.dart';
+import 'google_maps_page.dart';
 
 class CreateArenaForm extends StatefulWidget {
   CreateArenaForm({Key key}) : super(key: key);
@@ -134,7 +135,9 @@ class _CreateArenaFormState extends State<CreateArenaForm> {
                   ),
                 ),
               ),
-              _buildAddLocation(),
+              RaisedButton(onPressed: () => {
+                Navigator.pushNamed(context, "/GoogleMapScreen"),
+              }, child: _buildAddLocation()),
               _buildDivider(),
               _buildGameTime(),
               _buildDivider(),
@@ -361,6 +364,7 @@ class _CreateArenaFormState extends State<CreateArenaForm> {
       ),
     );
   }
+
   Widget _buildAirSoftLviv() {
     return Container(
       height: ScreenUtil().setHeight(70),
