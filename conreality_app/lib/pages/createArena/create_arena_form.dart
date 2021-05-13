@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 
 import '../../constants.dart';
-import 'google_maps_page.dart';
+import 'googleMap/google_maps_page.dart';
 
 class CreateArenaForm extends StatefulWidget {
   CreateArenaForm({Key key}) : super(key: key);
@@ -32,7 +32,7 @@ class _CreateArenaFormState extends State<CreateArenaForm> {
             children: [
               Container(
                 width: ScreenUtil().setWidth(375),
-                height: ScreenUtil().setHeight(32),
+                height: ScreenUtil().setHeight(48),
                 color: Colors.grey,
               ),
               Container(
@@ -135,18 +135,32 @@ class _CreateArenaFormState extends State<CreateArenaForm> {
                   ),
                 ),
               ),
-              RaisedButton(onPressed: () => {
-                Navigator.pushNamed(context, "/GoogleMapScreen"),
-              }, child: _buildAddLocation()),
-              _buildDivider(),
-              _buildGameTime(),
-              _buildDivider(),
-              _buildAddAPhotoCover(),
-              _buildDivider(),
-              _buildInvitePeople(),
-              _buildDivider(),
-              _buildAddLocation(),
-              _buildDivider(),
+              RaisedButton(
+                  color: Color(0xFF2B2B2B),
+                  onPressed: () => {
+                        Navigator.pushNamed(context, "/HomePageGoogleMaps"),
+                      },
+                  child: _buildAddLocation()),
+              // _buildDivider(),
+              RaisedButton(
+                  color: Color(0xFF2B2B2B),
+                  onPressed: () => {},
+                  child: _buildGameTime()),
+              // _buildDivider(),
+              RaisedButton(
+                  color: Color(0xFF2B2B2B),
+                  onPressed: () => {},
+                  child: _buildAddAPhotoCover()), // _buildDivider(),
+              RaisedButton(
+                  color: Color(0xFF2B2B2B),
+                  onPressed: () => {},
+                  child: _buildInvitePeople()), 
+              // _buildDivider(),
+               RaisedButton(
+                  color: Color(0xFF2B2B2B),
+                  onPressed: () => {},
+                  child: _buildAirSoftLviv()), 
+              // _buildDivider(),
             ],
           ),
         ),

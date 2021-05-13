@@ -35,6 +35,7 @@ dependencies:
   qr_flutter: ^1.1.1
   google_maps_flutter: ^2.0.3
   permission: ^0.1.7
+  location: ^4.1.1
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +63,9 @@ flutter:
     - assets/images/bottomRightCorner.png
     - assets/images/arrowDown.png
     - assets/images/stickForArrowDown.png
+    - assets/images/Ellipse81.png
+    - assets/images/move.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
