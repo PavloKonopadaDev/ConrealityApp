@@ -133,7 +133,6 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
           polygonLatLngs.length > 0 && _isPolygon ? _fabPolygon() : null,
       body: Stack(
         children: [
-          
           GoogleMap(
             initialCameraPosition: CameraPosition(
               target: LatLng(49.842957, 24.031111),
@@ -199,90 +198,87 @@ class _GoogleMapScreenState extends State<GoogleMapScreen> {
                   ),
                 ),
               ),
-
-             
             ],
           ),
-           Align(
-                alignment: Alignment.bottomCenter,
-                child: Row(
-                  children: [
-                    RaisedButton(
-                      color: Colors.black54,
-                      onPressed: () {
-                        _isPolygon = true;
-                        _isMarker = false;
-                        _isCircle = false;
-                      },
-                      child: Text(
-                        'Polygon',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white),
-                      ),
-                    ),
-                    RaisedButton(
-                      color: Colors.black54,
-                      onPressed: () {
-                        _isPolygon = false;
-                        _isMarker = false;
-                        _isCircle = true;
-                        radius = 50;
-                        return showDialog(
-                            builder: (context) => AlertDialog(
-                                  backgroundColor: Colors.grey[900],
-                                  title: Text(
-                                    'Choose the radius (m)',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white),
-                                  ),
-                                  content: Padding(
-                                    padding: EdgeInsets.all(8),
-                                    child: Material(
-                                      color: Colors.black,
-                                      child: TextField(
-                                        style: TextStyle(
-                                            fontSize: 16, color: Colors.white),
-                                        decoration: InputDecoration(
-                                          icon: Icon(Icons.zoom_out_map),
-                                          hintText: 'Ex: 100',
-                                          suffixText: 'meters',
-                                        ),
-                                        keyboardType:
-                                            TextInputType.numberWithOptions(),
-                                        onChanged: (input) {
-                                          setState(() {
-                                            radius = double.parse(input);
-                                          });
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                  actions: [
-                                    FlatButton(
-                                      onPressed: () => Navigator.pop(context),
-                                      child: Text(
-                                        'Ok',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                            context: context);
-                      },
-                      child: Text(
-                        'Circle',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white),
-                      ),
-                    ),
-                  ],
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Row(
+              children: [
+                RaisedButton(
+                  color: Colors.black54,
+                  onPressed: () {
+                    _isPolygon = true;
+                    _isMarker = false;
+                    _isCircle = false;
+                  },
+                  child: Text(
+                    'Polygon',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
                 ),
-              ),
+                RaisedButton(
+                  color: Colors.black54,
+                  onPressed: () {
+                    _isPolygon = false;
+                    _isMarker = false;
+                    _isCircle = true;
+                    radius = 50;
+                    return showDialog(
+                        builder: (context) => AlertDialog(
+                              backgroundColor: Colors.grey[900],
+                              title: Text(
+                                'Choose the radius (m)',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              content: Padding(
+                                padding: EdgeInsets.all(8),
+                                child: Material(
+                                  color: Colors.black,
+                                  child: TextField(
+                                    style: TextStyle(
+                                        fontSize: 16, color: Colors.white),
+                                    decoration: InputDecoration(
+                                      icon: Icon(Icons.zoom_out_map),
+                                      hintText: 'Ex: 100',
+                                      suffixText: 'meters',
+                                    ),
+                                    keyboardType:
+                                        TextInputType.numberWithOptions(),
+                                    onChanged: (input) {
+                                      setState(() {
+                                        radius = double.parse(input);
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
+                              actions: [
+                                FlatButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  child: Text(
+                                    'Ok',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                        context: context);
+                  },
+                  child: Text(
+                    'Circle',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
-        
       ),
     );
   }

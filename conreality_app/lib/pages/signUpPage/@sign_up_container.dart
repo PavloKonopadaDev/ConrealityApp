@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 class SignUpContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SignUpForm(
-      
-    );
+    return SignUpForm();
   }
 }

@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 class ArenaBrowserContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ArenaBrowserForm(
-      
-    );
+    return ArenaBrowserForm();
   }
 }

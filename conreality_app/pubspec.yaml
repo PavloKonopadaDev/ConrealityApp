@@ -65,7 +65,8 @@ flutter:
     - assets/images/stickForArrowDown.png
     - assets/images/Ellipse81.png
     - assets/images/move.png
-
+    - assets/images/OnboardImage1.png
+    - assets/images/OnBoardimage2.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

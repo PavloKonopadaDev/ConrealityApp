@@ -47,11 +47,17 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Studyng Maps - Zeh'),
         centerTitle: true,
-        backgroundColor: Colors.grey[900], 
+        backgroundColor: Colors.grey[900],
       ),
       floatingActionButton: FloatingActionButton.extended(
-          onPressed: () => _locationData != null ? Navigator.push(
-              context, MaterialPageRoute(builder: (context) => GoogleMapScreen(location: _locationData,))) : null,
+          onPressed: () => _locationData != null
+              ? Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => GoogleMapScreen(
+                            location: _locationData,
+                          )))
+              : null,
           backgroundColor: Colors.orange,
           label: Row(
             children: <Widget>[
@@ -74,7 +80,10 @@ class _HomePageState extends State<HomePage> {
             Text(
               'something',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
             SizedBox(height: 20),
             Text(

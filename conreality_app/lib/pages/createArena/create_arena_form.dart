@@ -154,12 +154,12 @@ class _CreateArenaFormState extends State<CreateArenaForm> {
               RaisedButton(
                   color: Color(0xFF2B2B2B),
                   onPressed: () => {},
-                  child: _buildInvitePeople()), 
+                  child: _buildInvitePeople()),
               // _buildDivider(),
-               RaisedButton(
+              RaisedButton(
                   color: Color(0xFF2B2B2B),
                   onPressed: () => {},
-                  child: _buildAirSoftLviv()), 
+                  child: _buildAirSoftLviv()),
               // _buildDivider(),
             ],
           ),

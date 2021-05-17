@@ -130,4 +130,3 @@ class TabBarFavourite extends StatelessWidget {
     );
   }
 }
-

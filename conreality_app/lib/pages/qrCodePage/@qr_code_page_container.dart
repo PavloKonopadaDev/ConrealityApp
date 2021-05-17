@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 class QrCodePageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return QrCodePageForm(
-      
-    );
+    return QrCodePageForm();
   }
 }
