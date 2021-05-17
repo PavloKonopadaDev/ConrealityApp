@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class QrCodePageForm extends StatefulWidget {
   QrCodePageForm({Key key}) : super(key: key);
 
@@ -24,26 +23,25 @@ class _QrCodePageFormState extends State<QrCodePageForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundQrCodeForm,
-
+        backgroundColor: backgroundQrCodeForm,
         appBar: _buildAppbar(),
-
         body: Center(
-
-          child: Column(children: [
-
-            SizedBox(height: ScreenUtil().setHeight(168),),
-            _buildResult(),
-
-             SizedBox(height: ScreenUtil().setHeight(133.13),),
-            _buildScanButton()
-
-          ],
+          child: Column(
+            children: [
+              SizedBox(
+                height: ScreenUtil().setHeight(168),
+              ),
+              _buildResult(),
+              SizedBox(
+                height: ScreenUtil().setHeight(133.13),
+              ),
+              _buildScanButton()
+            ],
           ),
-        )
-        );
-}
-Future scan() async {
+        ));
+  }
+
+  Future scan() async {
     try {
       String barcode = await BarcodeScanner.scan();
       setState(() => this.barcode = barcode);
@@ -63,83 +61,88 @@ Future scan() async {
     }
   }
 
-  Widget _buildAppbar(){
+  Widget _buildAppbar() {
     return AppBar(
-      
-        title:titleOfAppBarQrCodeForm,
-        centerTitle: true,
-        toolbarHeight: ScreenUtil().setHeight(80),
-        backgroundColor: appBarQrCodeFormColor ,
-
+      title: titleOfAppBarQrCodeForm,
+      centerTitle: true,
+      toolbarHeight: ScreenUtil().setHeight(80),
+      backgroundColor: appBarQrCodeFormColor,
     );
   }
-  Widget _buildResult(){
+
+  Widget _buildResult() {
     return Container(
-    width: ScreenUtil().setWidth(276),
-    height: ScreenUtil().setHeight(308.87),
-    color: Colors.white,
-    child: Stack(children: [
-      Center(child:Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      width: ScreenUtil().setWidth(276),
+      height: ScreenUtil().setHeight(308.87),
+      color: Colors.white,
+      child: Stack(
         children: [
-          Container(
-      width: ScreenUtil().setWidth(260),
-    height: ScreenUtil().setHeight(260),
-    child: Image.asset("assets/images/qrCode.png"),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: ScreenUtil().setWidth(260),
+                  height: ScreenUtil().setHeight(260),
+                  child: Image.asset("assets/images/qrCode.png"),
+                )
+              ],
+            ),
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            child: Container(
+              width: ScreenUtil().setWidth(41.74),
+              height: ScreenUtil().setHeight(41.74),
+              child: Image.asset("assets/images/topLeftCorner.png"),
+            ),
+          ),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: Container(
+              width: ScreenUtil().setWidth(41.74),
+              height: ScreenUtil().setHeight(41.74),
+              child: Image.asset("assets/images/topRightCorner.png"),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            child: Container(
+              width: ScreenUtil().setWidth(41.74),
+              height: ScreenUtil().setHeight(41.74),
+              child: Image.asset("assets/images/bottomLeftCorner.png"),
+            ),
+          ),
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Container(
+              width: ScreenUtil().setWidth(41.74),
+              height: ScreenUtil().setHeight(41.74),
+              child: Image.asset("assets/images/bottomRightCorner.png"),
+            ),
           )
         ],
-      ),),
-      Positioned(
-              top: 0,
-              left: 0,
-            child: Container(
-    width: ScreenUtil().setWidth(41.74),
-    height: ScreenUtil().setHeight(41.74),
-              child: Image.asset("assets/images/topLeftCorner.png"),
-              ),
-            ),
-             Positioned(
-              top: 0,
-              right: 0,
-            child: Container(
-           width: ScreenUtil().setWidth(41.74),
-    height: ScreenUtil().setHeight(41.74),
-                child: Image.asset("assets/images/topRightCorner.png"),
-              ),
-            ),
-             Positioned(
-              bottom: 0,
-              left: 0,
-            child: Container(
-          width: ScreenUtil().setWidth(41.74),
-    height: ScreenUtil().setHeight(41.74),
-         child: Image.asset("assets/images/bottomLeftCorner.png"),
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              right: 0,
-            child: Container(
-            width: ScreenUtil().setWidth(41.74),
-    height: ScreenUtil().setHeight(41.74),
-         child: Image.asset("assets/images/bottomRightCorner.png"),
-              ),
-            )
-    ],),
+      ),
     );
   }
-  Widget _buildScanButton(){
+
+  Widget _buildScanButton() {
     return Padding(
-          padding: const EdgeInsets.only(left:32, right: 32 ),
-          child: Container(
-          
+      padding: const EdgeInsets.only(left: 32, right: 32),
+      child: Container(
           width: ScreenUtil().setWidth(311),
           height: ScreenUtil().setHeight(48),
-      child: RaisedButton( 
+          child: RaisedButton(
             onPressed: scan,
-          
-          color: scanColorButtonQrCodeForm,child:scanTextButtonQrCodeForm,shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)) ,)
-          ),
-          );
+            color: scanColorButtonQrCodeForm,
+            child: scanTextButtonQrCodeForm,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(3.0)),
+          )),
+    );
   }
 }
